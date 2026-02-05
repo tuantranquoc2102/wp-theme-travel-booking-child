@@ -9,17 +9,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue parent and child theme styles
  */
 add_action( 'wp_enqueue_scripts', function() {
-	// Load style parent theme
-	wp_enqueue_style( 'travel-booking-parent-style', get_template_directory_uri() . '/style.css' );
+    // Load style parent theme
+    wp_enqueue_style( 'travel-booking-parent-style', get_template_directory_uri() . '/style.css', [], '1.0.0' );
 
-	// Load style child theme (override)
-	wp_enqueue_style( 'travel-booking-child-style', get_stylesheet_directory_uri() . '/style.css', array('travel-booking-parent-style') );
+    // Load style child theme (override)
+    wp_enqueue_style( 'travel-booking-child-style', get_stylesheet_directory_uri() . '/style.css', array('travel-booking-parent-style'), '1.0.1' );
 
-	// Load sticky header CSS
-	wp_enqueue_style( 'tb-child-sticky-header', get_stylesheet_directory_uri() . '/css/sticky-header.css', array('travel-booking-child-style'), null );
+    // Load sticky header CSS with high version and in footer for max override
+    wp_enqueue_style( 'tb-child-sticky-header', get_stylesheet_directory_uri() . '/css/sticky-header.css', array('travel-booking-child-style'), '999.999.999', 'all' );
 
-	// Load sticky header JS
-	wp_enqueue_script( 'tb-child-sticky-header', get_stylesheet_directory_uri() . '/js/sticky-header.js', array(), null, true );
+    // Load sticky header JS
+    wp_enqueue_script( 'tb-child-sticky-header', get_stylesheet_directory_uri() . '/js/sticky-header.js', array(), null, true );
+}, 99 );
+
+// Add a custom class to body for even higher CSS specificity if needed
+add_filter('body_class', function($classes) {
+    $classes[] = 'tb-child-sticky-header-active';
+    return $classes;
 });
 
 /*************************************************************************************************/
