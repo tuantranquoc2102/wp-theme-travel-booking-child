@@ -1,0 +1,45 @@
+/*
+Theme Name: Travel Booking Child
+Template: travel-booking
+Author: TEKU.TRAN
+Version: 1.0
+*/
+
+/* Footer widgets layout */
+#site-footer-widgets .footer-widgets-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Default column styles */
+#site-footer-widgets .footer-column {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* 3 columns */
+#site-footer-widgets.columns-3 .footer-column {
+    width: calc(33.333333% - 20px);
+}
+
+/* 4 columns */
+#site-footer-widgets.columns-4 .footer-column {
+    width: calc(25% - 22.5px);
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 768px) {
+    #site-footer-widgets .footer-column {
+        width: 100% !important;
+    }
+}
+
+/* Placeholder style (admin) */
+.footer-widget-placeholder {
+    background: rgba(0,0,0,0.03);
+    border: 1px dashed rgba(0,0,0,0.06);
+    padding: 12px;
+    border-radius: 4px;
+}

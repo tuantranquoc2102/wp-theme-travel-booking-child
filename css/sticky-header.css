@@ -1,0 +1,12 @@
+/* Sticky header for travel-booking-child */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+.site-header.sticky-active {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}

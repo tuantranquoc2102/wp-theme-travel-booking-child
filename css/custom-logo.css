@@ -1,0 +1,31 @@
+.site-header .site-branding {
+  padding: 0 !important;
+}
+
+/* 🖼 Giới hạn kích thước logo 1:1 nhỏ gọn */
+.site-branding .custom-logo {
+  width: 80px !important;     /* hoặc 100px tùy giao diện */
+  height: 80px !important;    /* giữ tỉ lệ 1:1 */
+  object-fit: contain;        /* đảm bảo không méo hình */
+  border-radius: 8px;         /* nếu muốn bo góc nhẹ */
+  padding: 10px;
+}
+
+/* 🔤 Căn chỉnh lại tên website cho cân đối */
+.site-branding .text-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.site-branding .site-title {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.site-branding .site-description {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
